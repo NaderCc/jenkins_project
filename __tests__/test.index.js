@@ -1,0 +1,5 @@
+test('responds with Hello World', async() => {
+    const response = await fetch('http://localhost:3000');
+    const data = await response.text();
+    expect(data).toBe('Hello World!');
+});

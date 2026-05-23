@@ -1,9 +1,17 @@
 pipeline {
     agent any
     stages {
-        stage('Hello') {
+        stage('build') {
             steps {
-                echo 'Hello from Jenkinsfile!'
+                sh 'npm install express'
+                sh 'npm install jest'
+                sh 'express --version'
+                sh 'node -v'
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'npm test'
             }
         }
     }
