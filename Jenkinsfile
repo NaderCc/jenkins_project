@@ -9,6 +9,13 @@ pipeline {
                 sh 'npm ci'
             }
         }
+
+        stage('run') {
+            steps {
+                sh 'npm start'
+            }
+        }
+
         stage('test') {
             steps {
                 sh 'npm test'
