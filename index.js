@@ -6,7 +6,11 @@ app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
-});
-//# sourceMappingURL=index.js.map
+// Export للاختبارات
+module.exports = app;
+
+if (require.main === module) {
+    app.listen(port, () => {
+        console.log(`Example app listening at http://localhost:${port}`);
+    });
+}
